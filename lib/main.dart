@@ -15,7 +15,7 @@ class Zepto extends StatelessWidget {
     return  MaterialApp(
       // home: HomePage(),
       routes: {
-        "/":(context) => LoginPage(),
+        "/":(context) => HomePage(),
         "/home": (context) =>  HomePage(),
         "/login": (context) =>  LoginPage()
       },

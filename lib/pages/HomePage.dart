@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -9,11 +12,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title:const Text("My Zepto"),
+        backgroundColor: Colors.deepPurple,
       ),
       body: const Center(
        child: Text("You are on Home Page"),
       ),
-      drawer: const Drawer(
+      // drawer: const Drawer(
+      // ),
+      drawer:  const MyDrawer(
       ),
     );
   }
