@@ -63,15 +63,39 @@ class _LoginPageState extends State<LoginPage> {
                    const SizedBox(
                     height: 20.0,
                   ),
-                  ElevatedButton(
-                    child:  const Text("Login"),
-                    style: TextButton.styleFrom(minimumSize:  const Size(100, 40)), onPressed: () {
-                      if (kDebugMode) {
-                        print("hi code");
-                        // Navigator.push(context, route)
-                        Navigator.pushNamed(context, MyRoutes.homeRoutes);
-                      }
-                  },
+                  // ElevatedButton(
+                  //   child:  const Text("Login"),
+                  //   style: TextButton.styleFrom(minimumSize:  const Size(100, 40)), onPressed: () {
+                  //     if (kDebugMode) {
+                  //       print("hi code");
+                  //       // Navigator.push(context, route)
+                  //       Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                  //     }
+                  // },
+                  // )
+                  InkWell(
+                    onTap:(){
+                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                    } ,
+                    child: Container(
+                      width: 100,
+                      height: 40,
+                      alignment: Alignment.center,
+                      // color: Colors.deepPurple,
+                      child: const Text("Login",
+                      style: TextStyle(color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                        fontSize: 10,
+                      ),
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                            10
+                        )
+                      ),
+                      // alignment: Alignment.center,
+                    ),
                   )
                 ],
               ),
