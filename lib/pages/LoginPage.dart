@@ -11,6 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name ="";
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -74,15 +75,23 @@ class _LoginPageState extends State<LoginPage> {
                   // },
                   // )
                   InkWell(
-                    onTap:(){
+                    onTap:()async{
+                      setState(() {
+                        changeButton = true;
+                      });
+                      await Future.delayed(const Duration(seconds: 1));
                       Navigator.pushNamed(context, MyRoutes.homeRoutes);
                     } ,
-                    child: Container(
-                      width: 100,
+                    child: AnimatedContainer(
+                      // width: 100,
+                      width: changeButton ? 50 :100,
                       height: 40,
                       alignment: Alignment.center,
                       // color: Colors.deepPurple,
-                      child: const Text("Login",
+                      child: changeButton ? const Icon(
+                        Icons.done,
+                        color: Colors.yellow,
+                      ) : const Text("Login",
                       style: TextStyle(color: Colors.white,
                       fontWeight: FontWeight.bold,
                         fontSize: 10,
@@ -90,10 +99,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       decoration: BoxDecoration(
                         color: Colors.deepPurple,
+                        // shape: changeButton?BoxShape.circle:BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(
-                            10
+                            changeButton ?20 :8
                         )
-                      ),
+                      ), duration: const Duration(seconds: 1),
                       // alignment: Alignment.center,
                     ),
                   )
