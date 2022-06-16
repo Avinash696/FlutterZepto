@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title:const Text("My Zepto"),
-        backgroundColor: Colors.deepPurple,
+
       ),
       body: const Center(
        child: Text("You are on Home Page"),

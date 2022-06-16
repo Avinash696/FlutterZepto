@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:zepto/utils/routes.dart';
 
@@ -30,13 +29,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white70,
+        color: Colors.blueGrey,
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                const Image(image: AssetImage('images/login_cartoon.png')),
+                const Image(image: AssetImage('images/login_bg.png')),
                 // Image(image: AssetImage("images/login_page.png")),
                 const SizedBox(
                   height: 20.0,
@@ -52,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                    height: 20.0,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -83,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         obscureText: true,
                         decoration: const InputDecoration(
+                          fillColor: Colors.red,
                             hintText: "Enter Password", labelText: "Password"),
                         validator: (value) {
                           if (value!.isEmpty) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zepto/pages/HomePage.dart';
 import 'package:zepto/pages/LoginPage.dart';
+import 'package:zepto/widgets/themes.dart';
 
 void main() {
   runApp(const Zepto());
@@ -12,12 +13,15 @@ class Zepto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return Container();
-    return  MaterialApp(
+    return MaterialApp(
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       // home: HomePage(),
+      initialRoute: '/login',
       routes: {
-        "/":(context) => HomePage(),
-        "/home": (context) =>  HomePage(),
-        "/login": (context) =>  LoginPage()
+        // "/": (context) => HomePage(),
+        "/home": (context) => const HomePage(),
+        "/login": (context) => const LoginPage()
       },
     );
   }
