@@ -15,11 +15,12 @@ class Zepto extends StatelessWidget {
     // return Container();
     return MaterialApp(
       theme: MyTheme.lightTheme(context),
-      darkTheme: MyTheme.darkTheme(context),
+      // darkTheme: MyTheme.darkTheme(context),
       // home: HomePage(),
+      // initialRoute: '/home',
       initialRoute: '/login',
       routes: {
-        // "/": (context) => HomePage(),
+        // "/": (context) => LoginPage(),
         "/home": (context) => const HomePage(),
         "/login": (context) => const LoginPage()
       },
